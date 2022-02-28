@@ -25,6 +25,10 @@ export default class AppComponent {
       // paragraph.font.color = "black";
       var docBody = context.document.body;
       docBody.insertParagraph(inputVal);
+      // eslint-disable-next-line no-undef
+      // let text = $("#myInput").val().toString();
+      // let comment = context.document.getSelection().insertComment(text);
+      // comment.load();
       await context.sync();
     });
   }
