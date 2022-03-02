@@ -8,27 +8,40 @@ import { Component } from "@angular/core";
 })
 export default class AppComponent {
   welcomeMessage = "Welcome";
+  // eslint-disable-next-line prettier/prettier
+  clickMessage = '';
 
-  async run() {
+  // async run() {
+  //   return Word.run(async (context) => {
+  //     const paragraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
+
+  //     // change the paragraph color to blue.
+  //     paragraph.font.color = "blue";
+
+  //     await context.sync();
+  //   });
+  // }
+
+  async onClickShowText(input) {
     return Word.run(async (context) => {
-      const paragraph = context.document.body.insertParagraph("Hello World", Word.InsertLocation.end);
+      this.clickMessage = input;
+
+      const paragraph = context.document.body.insertParagraph(this.clickMessage, Word.InsertLocation.end);
       paragraph.font.color = "blue";
 
       await context.sync();
     });
   }
 
-  async addText() {
+  async onKeyTypeText(event) {
     return Word.run(async (context) => {
-      const inputVal = context.document.getElementById("myInput").value;
-      // const paragraph = context.document.body.insertParagraph(inputVal, Word.InsertLocation.end);
-      // paragraph.font.color = "black";
-      var docBody = context.document.body;
-      docBody.insertParagraph(inputVal);
-      // eslint-disable-next-line no-undef
-      // let text = $("#myInput").val().toString();
-      // let comment = context.document.getSelection().insertComment(text);
-      // comment.load();
+      const inputValue = event.target.value;
+
+      const paragraph = context.document.body.insertParagraph(inputValue, Word.InsertLocation.end);
+
+
+      paragraph.font.color = "blue";
+
       await context.sync();
     });
   }

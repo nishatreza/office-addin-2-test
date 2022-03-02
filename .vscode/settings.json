@@ -1,4 +1,9 @@
 {
-  "eslint.validate": ["javascript", "javascriptreact", "typescript"],
-  "git.ignoreLimitWarning": true
-}
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript"
+    ],
+    "git.ignoreLimitWarning": true
+  }
+  

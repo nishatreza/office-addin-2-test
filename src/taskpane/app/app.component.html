@@ -1,22 +1,22 @@
-<header class="ms-welcome__header ms-bgColor-neutralLighter ms-u-fadeIn500">
-    <img width="90" height="90" src="../../../assets/logo-filled.png" alt="Contoso Task Pane Add-in"
-        title="Contoso Task Pane Add-in" />
-    <h1 class="ms-fontSize-su ms-fontWeight-light ms-fontColor-neutralPrimary">{{welcomeMessage}}</h1>
-</header>
 <main class="ms-welcome__main">
 
+    <br />
+    <br />
 
     <br />
     <br />
     <button class="ms-Button" id="change-font-new" (click)="changeFontBold()">Bold </button><br /><br />
     <button class="ms-Button" id="change-font" (click)="changeFontItalic()">Italic </button><br /><br />
-    <input type="text" placeholder="Type anything" id="myInput">
-    <button class="ms-Button" id="change-font-second" (click)="addText()">Add Text </button><br /><br />
 
+    <input type="text" placeholder="Click to see text" name="myInput" id="myInput" #myInput>
+    <button type="button" (click)="onClickShowText(myInput.value)">Add
+        Text </button><br /><br />
 
+    <input placeholder="show anything you type" (keyup)="onKeyTypeText($event)">
 
-    <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" (click)="run()">
+    <!-- <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" (click)="run()">
+
         <span class="ms-Button-label">Run</span>
         <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
-    </div>
+    </div> -->
 </main>
